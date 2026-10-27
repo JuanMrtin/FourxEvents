@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fourx Events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-sans bg-[#F7F5F0] text-[#4A3B32] overflow-x-hidden selection:bg-[#4A3B32] selection:text-[#F7F5F0]">
+
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-700 bg-transparent py-8">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="#inicio" id="logo" class="relative z-50 flex items-center group transition-opacity duration-500 opacity-0 md:opacity-100">
+                <img src="logo.png" id="logo-img" alt="Fourx Events" class="h-10 md:h-12 w-auto transition-all duration-500 logo-white" onerror="this.style.display='none'; document.getElementById('logo-text-fallback-nav').style.display='block';">
+                <span id="logo-text-fallback-nav" class="font-serif text-2xl md:text-3xl tracking-[0.15em] leading-none text-white" style="display:none;">FOURX</span>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-10">
+                <a href="#nosotros" class="nav-link text-[0.8rem] uppercase tracking-widest transition-colors hover:opacity-50 text-white">Nosotros</a>
+                <a href="#servicios" class="nav-link text-[0.8rem] uppercase tracking-widest transition-colors hover:opacity-50 text-white">Servicios</a>
+                <a href="#galeria" class="nav-link text-[0.8rem] uppercase tracking-widest transition-colors hover:opacity-50 text-white">Galería</a>
+                <a href="#contacto" class="nav-link text-[0.8rem] uppercase tracking-widest transition-colors hover:opacity-50 text-white">Contacto</a>
+                
+                <a href="#contacto" id="cta-btn" class="px-8 py-3 text-[0.8rem] uppercase tracking-widest transition-all duration-300 bg-white text-[#4A3B32] hover:bg-transparent hover:text-white border border-white">Presupuesto</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="lg:hidden relative z-50 p-2 text-white">
+                <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
+                <i data-lucide="x" id="close-icon" class="w-8 h-8 hidden"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="fixed top-0 left-0 w-full bg-[#F7F5F0] flex flex-col items-center justify-center gap-8 z-40 overflow-hidden transition-all duration-500 h-0 opacity-0 pointer-events-none">
+            <a href="#nosotros" class="mobile-link text-3xl font-serif text-[#4A3B32] hover:italic transition-all">Nosotros</a>
+            <a href="#servicios" class="mobile-link text-3xl font-serif text-[#4A3B32] hover:italic transition-all">Servicios</a>
+            <a href="#galeria" class="mobile-link text-3xl font-serif text-[#4A3B32] hover:italic transition-all">Galería</a>
+            <a href="#contacto" class="mobile-link text-3xl font-serif text-[#4A3B32] hover:italic transition-all">Contacto</a>
+            <a href="#contacto" class="mobile-link mt-8 px-10 py-4 bg-[#4A3B32] text-[#F7F5F0] text-sm uppercase tracking-widest border border-[#4A3B32]">Solicitar Presupuesto</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-[#4A3B32]">
+            <div id="hero-bg" class="absolute inset-0 w-full h-[120%] -top-[10%]">
+                <div class="absolute inset-0 bg-[#4A3B32]/40 z-10 mix-blend-multiply"></div>
+                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=2070&auto=format&fit=crop" alt="Boda Elegante y DJ" class="w-full h-full object-cover"/>
+            </div>
+            <div class="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-[#F7F5F0] via-[#F7F5F0]/60 to-transparent z-20 pointer-events-none"></div>
+
+            <div id="hero-content" class="relative z-30 text-center px-6 max-w-5xl mx-auto flex flex-col items-center opacity-0 transition-opacity duration-1000">
+                <div class="flex flex-col items-center mb-10 hero-scale">
+                    <img src="logo.png" alt="Fourx Events" class="w-72 md:w-[32rem] h-auto logo-white" onerror="this.style.display='none'; document.getElementById('logo-text-fallback-hero').style.display='block';">
+                    <div id="logo-text-fallback-hero" style="display:none;" class="text-center">
+                        <h1 class="text-6xl md:text-8xl lg:text-[9rem] font-serif text-white tracking-[0.1em] leading-none">FOURX</h1>
+                        <span class="text-sm md:text-xl lg:text-2xl tracking-[0.5em] font-light text-white/80 mt-4 md:mt-6 block">E V E N T S</span>
+                    </div>
+                </div>
+                <p class="text-xl md:text-3xl font-serif italic text-white/90 font-light hero-fade-up">Creamos el ambiente. Tú disfrutas el momento.</p>
+            </div>
+
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center pointer-events-none" id="scroll-indicator">
+                <div class="w-[1px] bg-[#4A3B32] opacity-50 h-[50px] animate-scroll-line"></div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="pt-32 pb-24 md:pt-48 md:pb-40 px-6 lg:px-12 max-w-[90rem] mx-auto relative z-30 bg-[#F7F5F0]">
+            <div class="flex flex-col md:flex-row gap-16 md:gap-32 items-center">
+                <div class="w-full md:w-5/12 reveal-up">
+                    <h4 class="text-xs tracking-[0.3em] uppercase text-[#4A3B32]/50 mb-6">Nuestra Esencia</h4>
+                    <h2 class="text-4xl md:text-6xl font-serif leading-[1.2]">Diseñamos <br/><span class="italic">experiencias</span> memorables.</h2>
+                </div>
+                <div class="w-full md:w-7/12 reveal-up" style="transition-delay: 200ms;">
+                    <p class="text-xl md:text-2xl font-light leading-relaxed text-[#4A3B32]/80">
+                        En Fourx Events combinamos elegancia visual, precisión técnica y un cuidado extremo por los detalles. Desde la calidad acústica perfecta hasta la ambientación más cuidada, elevamos cada celebración para convertirla en un evento verdaderamente excepcional.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="py-24 max-w-[90rem] mx-auto px-6 lg:px-12 bg-[#F7F5F0]">
+            <div class="mb-32 text-center reveal-up">
+                <h2 class="text-5xl md:text-7xl font-serif">Áreas de <span class="italic text-[#D9CBB8]">Servicio</span></h2>
+            </div>
+            <div class="space-y-40 md:space-y-56">
+                <div id="dj" class="flex flex-col lg:flex-row gap-16 lg:gap-32 items-center"><div class="w-full lg:w-3/5"><div class="image-reveal-container aspect-[4/5] md:aspect-[4/3] w-full"><div class="image-reveal-overlay"></div><img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop" alt="DJ para eventos" class="image-reveal-img" /></div></div><div class="w-full lg:w-2/5 flex flex-col justify-center"><div class="reveal-up"><div class="flex items-center gap-6 mb-10 text-[#4A3B32]/40"><span class="text-sm font-serif italic">Servicio 01</span><span class="flex-1 h-[1px] bg-[#4A3B32]/20"></span><span class="text-sm font-serif italic">04</span></div><h3 class="text-4xl md:text-5xl font-serif mb-6 leading-tight">DJ para eventos</h3><p class="text-lg md:text-xl font-light mb-12 text-[#4A3B32]/70 leading-relaxed">La música marca el ambiente de cualquier celebración, y nosotros nos encargamos de que la fiesta no pare.</p><ul class="space-y-6 mb-14"><li class="flex items-start gap-4 stagger-child" style="transition-delay: 100ms;"><span class="w-1.5 h-1.5 rounded-full bg-[#4A3B32] mt-2.5 flex-shrink-0 opacity-40"></span><span class="font-light text-[#4A3B32]/90 text-lg tracking-wide">DJ con equipo de sonido incluido</span></li><li class="flex items-start gap-4 stagger-child" style="transition-delay: 250ms;"><span class="w-1.5 h-1.5 rounded-full bg-[#4A3B32] mt-2.5 flex-shrink-0 opacity-40"></span><span class="font-light text-[#4A3B32]/90 text-lg tracking-wide">Música a tu gusto y adaptada al ambiente</span></li><li class="flex items-start gap-4 stagger-child" style="transition-delay: 400ms;"><span class="w-1.5 h-1.5 rounded-full bg-[#4A3B32] mt-2.5 flex-shrink-0 opacity-40"></span><span class="font-light text-[#4A3B32]/90 text-lg tracking-wide">Tú disfrutas, nosotros ponemos el ritmo</span></li></ul><a href="#contacto" class="inline-flex items-center gap-4 text-xs uppercase tracking-[0.2em] font-medium group"><span class="border-b border-[#4A3B32] pb-1 group-hover:text-[#4A3B32]/60 group-hover:border-[#4A3B32]/60 transition-colors">Reservar tu fecha</span><i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-2 transition-transform text-[#4A3B32]/60"></i></a></div></div></div>
+                <div id="animacion" class="flex flex-col lg:flex-row-reverse gap-16 lg:gap-32 items-center"><div class="w-full lg:w-3/5"><div class="image-reveal-container aspect-[4/5] md:aspect-[4/3] w-full"><div class="image-reveal-overlay"></div><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=2070&auto=format&fit=crop" alt="Animación para niños" class="image-reveal-img" /></div></div><div class="w-full lg:w-2/5 flex flex-col justify-center"><div class="reveal-up"><div class="flex items-center gap-6 mb-10 text-[#4A3B32]/40"><span class="text-sm font-serif italic">Servicio 02</span><span class="flex-1 h-[1px] bg-[#4A3B32]/20"></span><span class="text-sm font-serif italic">04</span></div><h3 class="text-4xl md:text-5xl font-serif mb-6 leading-tight">Animación para niños</h3><p class="text-lg md:text-xl font-light mb-12 text-[#4A3B32]/70 leading-relaxed">Juegos y actividades para que los más pequeños se lo pasen en grande.</p><ul class="space-y-6 mb-14"><li class="flex items-start gap-4 stagger-child" style="transition-delay: 100ms;"><span class="w-1.5 h-1.5 rounded-full bg-[#4A3B32] mt-2.5 flex-shrink-0 opacity-40"></span><span class="font-light text-[#4A3B32]/90 text-lg tracking-wide">Juegos y dinámicas para todos los peques</span></li><li class="flex items-start gap-4 stagger-child" style="transition-delay: 250ms;"><span class="w-1.5 h-1.5 rounded-full bg-[#4A3B32] mt-2.5 flex-shrink-0 opacity-40"></span><span class="font-light text-[#4A3B32]/90 text-lg tracking-wide">Diversión pensada para cada edad</span></li><li class="flex items-start gap-4 stagger-child" style="transition-delay: 400ms;"><span class="w-1.5 h-1.5 rounded-full bg-[#4A3B32] mt-2.5 flex-shrink-0 opacity-40"></span><span class="font-light text-[#4A3B32]/90 text-lg tracking-wide">Los padres disfrutan del evento con tranquilidad</span></li></ul><a href="#contacto" class="inline-flex items-center gap-4 text-xs uppercase tracking-[0.2em] font-medium group"><span class="border-b border-[#4A3B32] pb-1 group-hover:text-[#4A3B32]/60 group-hover:border-[#4A3B32]/60 transition-colors">Reservar tu fecha</span><i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-2 transition-transform text-[#4A3B32]/60"></i></a></div></div></div>
+                <div id="sonido" class="flex flex-col lg:flex-row gap-16 lg:gap-32 items-center"><div class="w-full lg:w-3/5"><div class="image-reveal-container aspect-[4/5] md:aspect-[4/3] w-full"><div class="image-reveal-overlay"></div><img src="https://images.unsplash.com/photo-1461151304267-38535e780c79?q=80&w=2069&auto=format&fit=crop" alt="Alquiler de equipo de sonido" class="image-reveal-img" /></div></div><div class="w-full lg:w-2/5 flex flex-col justify-center"><div class="reveal-up"><div class="flex items-center gap-6 mb-10 text-[#4A3B32]/40"><span class="text-sm font-serif italic">Servicio 03</span><span class="flex-1 h-[1px] bg-[#4A3B32]/20"></span><span class="text-sm font-serif italic">04</span></div><h3 class="text-4xl md:text-5xl font-serif mb-6 leading-tight">Alquiler de equipo de sonido</h3><p class="text-lg md:text-xl font-light mb-12 text-[#4A3B32]/70 leading-relaxed">Sonido claro y potente para que tu evento se escuche como tiene que escucharse.</p><ul class="space-y-6 mb-14"><li class="flex items-start gap-4 stagger-child" style="transition-delay: 100ms;"><span class="w-1.5 h-1.5 rounded-full bg-[#4A3B32] mt-2.5 flex-shrink-0 opacity-40"></span><span class="font-light text-[#4A3B32]/90 text-lg tracking-wide">Equipo adaptado al tamaño de tu evento</span></li><li class="flex items-start gap-4 stagger-child" style="transition-delay: 250ms;"><span class="w-1.5 h-1.5 rounded-full bg-[#4A3B32] mt-2.5 flex-shrink-0 opacity-40"></span><span class="font-light text-[#4A3B32]/90 text-lg tracking-wide">Ideal para fiestas, celebraciones y actos</span></li><li class="flex items-start gap-4 stagger-child" style="transition-delay: 400ms;"><span class="w-1.5 h-1.5 rounded-full bg-[#4A3B32] mt-2.5 flex-shrink-0 opacity-40"></span><span class="font-light text-[#4A3B32]/90 text-lg tracking-wide">Te asesoramos para elegir lo que necesitas</span></li></ul><a href="#contacto" class="inline-flex items-center gap-4 text-xs uppercase tracking-[0.2em] font-medium group"><span class="border-b border-[#4A3B32] pb-1 group-hover:text-[#4A3B32]/60 group-hover:border-[#4A3B32]/60 transition-colors">Reservar tu fecha</span><i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-2 transition-transform text-[#4A3B32]/60"></i></a></div></div></div>
+                <div id="organizacion" class="flex flex-col lg:flex-row-reverse gap-16 lg:gap-32 items-center"><div class="w-full lg:w-3/5"><div class="image-reveal-container aspect-[4/5] md:aspect-[4/3] w-full"><div class="image-reveal-overlay"></div><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop" alt="Organización de eventos" class="image-reveal-img" /></div></div><div class="w-full lg:w-2/5 flex flex-col justify-center"><div class="reveal-up"><div class="flex items-center gap-6 mb-10 text-[#4A3B32]/40"><span class="text-sm font-serif italic">Servicio 04</span><span class="flex-1 h-[1px] bg-[#4A3B32]/20"></span><span class="text-sm font-serif italic">04</span></div><h3 class="text-4xl md:text-5xl font-serif mb-6 leading-tight">Organización de eventos</h3><p class="text-lg md:text-xl font-light mb-12 text-[#4A3B32]/70 leading-relaxed">Nos ocupamos de que todo salga bien para que tú solo tengas que disfrutar.</p><ul class="space-y-6 mb-14"><li class="flex items-start gap-4 stagger-child" style="transition-delay: 100ms;"><span class="w-1.5 h-1.5 rounded-full bg-[#4A3B32] mt-2.5 flex-shrink-0 opacity-40"></span><span class="font-light text-[#4A3B32]/90 text-lg tracking-wide">Organización completa de tu celebración</span></li><li class="flex items-start gap-4 stagger-child" style="transition-delay: 250ms;"><span class="w-1.5 h-1.5 rounded-full bg-[#4A3B32] mt-2.5 flex-shrink-0 opacity-40"></span><span class="font-light text-[#4A3B32]/90 text-lg tracking-wide">Decoración cuidada y a tu estilo</span></li><li class="flex items-start gap-4 stagger-child" style="transition-delay: 400ms;"><span class="w-1.5 h-1.5 rounded-full bg-[#4A3B32] mt-2.5 flex-shrink-0 opacity-40"></span><span class="font-light text-[#4A3B32]/90 text-lg tracking-wide">Atención a cada detalle del evento</span></li></ul><a href="#contacto" class="inline-flex items-center gap-4 text-xs uppercase tracking-[0.2em] font-medium group"><span class="border-b border-[#4A3B32] pb-1 group-hover:text-[#4A3B32]/60 group-hover:border-[#4A3B32]/60 transition-colors">Reservar tu fecha</span><i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-2 transition-transform text-[#4A3B32]/60"></i></a></div></div></div>
+            </div>
+        </section>
+
+        <section id="galeria" class="py-40 bg-white">
+            <div class="max-w-[90rem] mx-auto px-6 lg:px-12">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+                    <div class="reveal-up">
+                        <h2 class="text-5xl md:text-6xl font-serif">Portfolio <br/><span class="italic text-[#D9CBB8]">Visual</span></h2>
+                    </div>
+                    <div class="reveal-up" style="transition-delay: 200ms;">
+                        <p class="text-lg font-light text-[#4A3B32]/60 max-w-md md:text-right">
+                            Momentos donde la iluminación, el sonido y la estética convergen.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[300px]">
+                    <div class="md:col-span-2 md:row-span-2">
+                        <div class="image-reveal-container w-full h-full">
+                            <div class="image-reveal-overlay"></div>
+                            <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=1200" alt="Evento 1" class="image-reveal-img" />
+                        </div>
+                    </div>
+                    <div class="md:col-span-1 md:row-span-1">
+                        <div class="image-reveal-container w-full h-full">
+                            <div class="image-reveal-overlay"></div>
+                            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800" alt="Evento 2" class="image-reveal-img" />
+                        </div>
+                    </div>
+                    <div class="md:col-span-1 md:row-span-1">
+                        <div class="image-reveal-container w-full h-full">
+                            <div class="image-reveal-overlay"></div>
+                            <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=800" alt="Evento 3" class="image-reveal-img" />
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 md:row-span-1">
+                        <div class="image-reveal-container w-full h-full">
+                            <div class="image-reveal-overlay"></div>
+                            <img src="https://tuespectaculo.com/dj-para-eventos-celebraciones/" alt="Evento 4" class="image-reveal-img" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-32 md:py-48 max-w-[90rem] mx-auto px-6 lg:px-12 bg-[#F7F5F0]">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <div class="reveal-up">
+                    <h4 class="text-xs tracking-[0.3em] uppercase text-[#4A3B32]/50 mb-4">Metodología</h4>
+                    <h2 class="text-4xl md:text-6xl font-serif mb-8 leading-[1.1]">Cómo <br/><span class="italic">trabajamos</span></h2>
+                    <p class="font-light text-[#4A3B32]/70 text-lg max-w-md">
+                        Planificación meticulosa para garantizar que cada elemento de tu evento funcione a la perfección.
+                    </p>
+                </div>
+                <div class="relative pt-4 space-y-12">
+                    <div class="flex flex-col md:flex-row md:items-baseline gap-4 md:gap-8 border-b border-[#4A3B32]/10 pb-8 stagger-child" style="transition-delay: 100ms;"><span class="font-serif italic text-[#4A3B32]/40 text-2xl w-12">01</span><div><h3 class="text-2xl font-serif mb-2">Contacto</h3><p class="font-light text-[#4A3B32]/70">Nos cuentas tu idea y el tipo de evento que estás planificando.</p></div></div>
+                    <div class="flex flex-col md:flex-row md:items-baseline gap-4 md:gap-8 border-b border-[#4A3B32]/10 pb-8 stagger-child" style="transition-delay: 250ms;"><span class="font-serif italic text-[#4A3B32]/40 text-2xl w-12">02</span><div><h3 class="text-2xl font-serif mb-2">Evaluación</h3><p class="font-light text-[#4A3B32]/70">Analizamos el espacio y tus necesidades técnicas y estéticas.</p></div></div>
+                    <div class="flex flex-col md:flex-row md:items-baseline gap-4 md:gap-8 border-b border-[#4A3B32]/10 pb-8 stagger-child" style="transition-delay: 400ms;"><span class="font-serif italic text-[#4A3B32]/40 text-2xl w-12">03</span><div><h3 class="text-2xl font-serif mb-2">Propuesta</h3><p class="font-light text-[#4A3B32]/70">Diseñamos una solución a medida y te orientamos sobre opciones.</p></div></div>
+                    <div class="flex flex-col md:flex-row md:items-baseline gap-4 md:gap-8 border-b border-[#4A3B32]/10 pb-8 stagger-child" style="transition-delay: 550ms;"><span class="font-serif italic text-[#4A3B32]/40 text-2xl w-12">04</span><div><h3 class="text-2xl font-serif mb-2">El Evento</h3><p class="font-light text-[#4A3B32]/70">Ejecución impecable para que tú te dediques a disfrutar.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="py-32 md:py-48 bg-[#F7F5F0]">
+            <div class="max-w-[90rem] mx-auto px-6 lg:px-12">
+                <div class="flex flex-col md:flex-row justify-between items-start gap-20">
+                    
+                    <div class="w-full md:w-1/2 reveal-up">
+                        <h2 class="text-5xl md:text-7xl font-serif mb-8">Hablemos.</h2>
+                        <p class="font-light text-[#4A3B32]/70 text-lg mb-16 max-w-md leading-relaxed">
+                            Rellena el formulario para solicitar tu presupuesto. Si lo prefieres, escríbenos directamente.
+                        </p>
+
+                        <div class="space-y-6 font-light text-sm tracking-wide text-[#4A3B32]/80">
+                            <a href="#" class="flex items-center gap-6 hover:text-[#4A3B32] transition-colors group">
+                                <i data-lucide="mail" stroke-width="1" class="w-5 h-5 group-hover:-translate-y-1 transition-transform"></i>
+                                <span>fourxeventos@gmail.com</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-6 hover:text-[#4A3B32] transition-colors group">
+                                <i data-lucide="message-circle" stroke-width="1" class="w-5 h-5 group-hover:-translate-y-1 transition-transform"></i>
+                                <span>WhatsApp Directo</span> 
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-1/2">
+                        <form class="space-y-12" onsubmit="event.preventDefault()">
+                            <div class="grid grid-cols-1 gap-12 reveal-up" style="transition-delay: 200ms;">
+                                <div class="relative group">
+                                    <input type="text" required class="w-full bg-transparent border-b border-[#4A3B32]/30 py-3 text-[#4A3B32] focus:outline-none focus:border-[#4A3B32] transition-colors peer placeholder-transparent text-lg font-light" placeholder="Nombre" id="name" />
+                                    <label for="name" class="absolute left-0 -top-4 text-xs text-[#4A3B32]/60 uppercase tracking-widest transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:font-light peer-focus:-top-4 peer-focus:text-xs peer-focus:uppercase peer-focus:font-medium cursor-text">Nombre</label>
+                                </div>
+
+                                <div class="relative group">
+                                    <input type="email" required class="w-full bg-transparent border-b border-[#4A3B32]/30 py-3 text-[#4A3B32] focus:outline-none focus:border-[#4A3B32] transition-colors peer placeholder-transparent text-lg font-light" placeholder="Email" id="email" />
+                                    <label for="email" class="absolute left-0 -top-4 text-xs text-[#4A3B32]/60 uppercase tracking-widest transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:font-light peer-focus:-top-4 peer-focus:text-xs peer-focus:uppercase peer-focus:font-medium cursor-text">Email</label>
+                                </div>
+
+                                <div class="relative group">
+                                    <select required class="w-full bg-transparent border-b border-[#4A3B32]/30 py-3 text-[#4A3B32] focus:outline-none focus:border-[#4A3B32] transition-colors appearance-none text-lg font-light">
+                                        <option value="" disabled selected class="text-[#4A3B32]/50">Servicio de interés</option>
+                                        <option value="dj" class="bg-[#F7F5F0]">DJ para eventos</option>
+                                        <option value="animacion" class="bg-[#F7F5F0]">Animación infantil</option>
+                                        <option value="sonido" class="bg-[#F7F5F0]">Alquiler de sonido</option>
+                                        <option value="organizacion" class="bg-[#F7F5F0]">Organización</option>
+                                    </select>
+                                    <label class="absolute left-0 -top-4 text-xs text-[#4A3B32]/60 uppercase tracking-widest">Servicio</label>
+                                    <i data-lucide="chevron-down" class="absolute right-0 top-4 w-4 h-4 text-[#4A3B32]/50 pointer-events-none"></i>
+                                </div>
+
+                                <div class="relative group">
+                                    <textarea required rows="1" class="w-full bg-transparent border-b border-[#4A3B32]/30 py-3 text-[#4A3B32] focus:outline-none focus:border-[#4A3B32] transition-colors resize-none peer placeholder-transparent text-lg font-light" placeholder="Detalles del evento" id="details"></textarea>
+                                    <label for="details" class="absolute left-0 -top-4 text-xs text-[#4A3B32]/60 uppercase tracking-widest transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-placeholder-shown:font-light peer-focus:-top-4 peer-focus:text-xs peer-focus:uppercase peer-focus:font-medium cursor-text">Detalles (Fecha, Lugar, Invitados)</label>
+                                </div>
+                            </div>
+
+                            <div class="pt-6 reveal-up" style="transition-delay: 400ms;">
+                                <button type="submit" class="flex items-center gap-4 text-xs uppercase tracking-[0.2em] font-medium group text-[#4A3B32]">
+                                    <span class="border-b border-[#4A3B32] pb-1 group-hover:opacity-60 transition-opacity">
+                                        Enviar solicitud
+                                    </span>
+                                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-2 transition-transform"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#4A3B32] text-[#F7F5F0] pt-24 pb-12">
+        <div class="max-w-[90rem] mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 mb-24">
+                <div class="flex flex-col items-start">
+                    <img src="logo.png" alt="Fourx Events" class="h-16 md:h-20 w-auto mb-4 logo-white" onerror="this.style.display='none';">
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-[#F7F5F0] hover:text-[#4A3B32] transition-colors">
+                        <i data-lucide="instagram" stroke-width="1.5" class="w-4.5 h-4.5"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-xs font-light text-white/40 tracking-wider">
+                <p>&copy; 2026 Fourx Events. Todos los derechos reservados.</p>
+                <div class="flex gap-8">
+                    <a href="#" class="hover:text-white transition-colors">Aviso Legal</a>
+                    <a href="#" class="hover:text-white transition-colors">Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
